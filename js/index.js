@@ -11,13 +11,13 @@ btns.forEach((btn, i) => {
     const lastText = text.innerText.at(-1)
     if (btnText === '=') {
       if (!operators.includes(lastText)) {
-        for (let i = 0; i < operators.length - 1; i++) {
-          if (text.innerText !== '0' && text.innerText.includes(operators[i])) {
+        for (let i = 0; i < text.innerText.length - 1; i++) {
+          if (text.innerText !== '0' && operators.includes(text.innerText[i])) {
             list.insertAdjacentHTML('afterbegin',
             `<li>${text.innerText} = ${eval(text.innerText)}</li>`
             )
+            break
           }
-          break
         }
         text.innerText = eval(text.innerText)
       }
@@ -42,8 +42,8 @@ document.addEventListener('keydown', event => {
   const lastText = text.innerText.at(-1)
   if (btnText === '=' || btnText === 'Enter') {
     if (!operators.includes(lastText)) {
-      for (let i = 0; i < operators.length - 1; i++) {
-        if (text.innerText !== '0' && text.innerText.includes(operators[i])) {
+      for (let i = 0; i < text.innerText.length - 1; i++) {
+        if (text.innerText !== '0' && operators.includes(text.innerText[i])) {
           list.insertAdjacentHTML('afterbegin',
           `<li>${text.innerText} = ${eval(text.innerText)}</li>`
           )
