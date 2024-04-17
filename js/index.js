@@ -5,7 +5,7 @@ const clearBtn = document.querySelector('#clearBtn')
 
 btns.forEach((btn, i) => {
   btn.addEventListener('click', () => {
-    text.style.width = '100%'
+    // text.style.width = '100%'
     text.scrollLeft = text.scrollWidth
     const btnText = btn.innerText
     const operators = ['+', '-', '*', '/', '.']
@@ -37,7 +37,8 @@ btns.forEach((btn, i) => {
 })
 
 document.addEventListener('keydown', event => {
-  text.style.width = '100%'
+  // text.style.width = '100%'
+  text.scrollLeft = text.scrollWidth
   const btnText = event.key
   const operators = ['+', '-', '*', '/', '.']
   const lastText = text.innerText.at(-1)
@@ -70,7 +71,7 @@ document.addEventListener('keydown', event => {
   } else if (!isNaN(parseInt(btnText)) || operators.includes(btnText)) {
     text.innerText += btnText
   }
-  console.log(text.innerText.length)
+  // console.log(text.innerText.length)
 })
 
 clearBtn.addEventListener('click', () => {
