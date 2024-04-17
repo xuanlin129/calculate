@@ -6,6 +6,7 @@ const clearBtn = document.querySelector('#clearBtn')
 btns.forEach((btn, i) => {
   btn.addEventListener('click', () => {
     text.style.width = '100%'
+    text.scrollTop = text.scrollHeight
     const btnText = btn.innerText
     const operators = ['+', '-', '*', '/', '.']
     const lastText = text.innerText.at(-1)
