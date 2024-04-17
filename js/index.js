@@ -71,7 +71,6 @@ document.addEventListener('keydown', event => {
   } else if (!isNaN(parseInt(btnText)) || operators.includes(btnText)) {
     text.innerText += btnText
   }
-  // console.log(text.innerText.length)
 })
 
 clearBtn.addEventListener('click', () => {
